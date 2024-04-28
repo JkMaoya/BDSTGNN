@@ -2,7 +2,7 @@
 import numpy as np
 import pandas as pd
 from torch.nn.utils import weight_norm
-from model.BDSTGN import *
+from model.BDSTGNN import *
 import pickle
 import torch
 from torch import nn
@@ -58,7 +58,7 @@ dropout=0
 
 
 min_loss = 1e10
-model = BDSTGN(node_embed, kernel_size, out_dim_gcn, history_window, pred_window, num_nodes, num_channels_graph,
+model = BDSTGNN(node_embed, kernel_size, out_dim_gcn, history_window, pred_window, num_nodes, num_channels_graph,
                kernel_size_graph, dropout)
 optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
 

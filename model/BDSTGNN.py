@@ -128,10 +128,10 @@ class series_decomp(nn.Module):
         return res, moving_mean
 
 
-class BDSTGN(nn.Module):
+class BDSTGNN(nn.Module):
     def __init__(self, node_embed, kernel_size, out_dim_gcn
                  , history_window, pred_window, num_nodes, num_channels_graph, kernel_size_graph, dropout):
-        super(BDSTGN, self).__init__()
+        super(BDSTGNN, self).__init__()
 
         self.GCN1 = GCN_Model(node_embed, out_dim_gcn)
         self.GCN2 = GCN_Model(out_dim_gcn, out_dim_gcn)
